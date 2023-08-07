@@ -139,7 +139,7 @@ pub async fn price(
     maybe_jupiter_api_error(reqwest::get(url).await?.json().await?)
 }
 
-#[derive(Default)]
+#[derive(Default, Clone)]
 pub struct QuoteConfig {
     pub only_direct_routes: bool,
     pub slippage_bps: Option<f64>,
